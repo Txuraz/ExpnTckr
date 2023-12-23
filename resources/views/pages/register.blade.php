@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Register')
-@section('content')
     <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
             <div class="row justify-content-center">
@@ -38,7 +37,7 @@
                                 <p class="text-center small">Enter your personal details to create an account</p>
                             </div>
 
-                            <form class="row g-3" action="" method="post">
+                            <form class="row g-3" action="{{route('store.user')}}" method="post">
                                 @csrf
                                 <div class="col-12">
                                     <label for="yourName" class="form-label">Full Name</label>
@@ -74,7 +73,7 @@
                                     <button class="btn btn-primary w-100" type="submit">Create Account</button>
                                 </div>
                                 <div class="col-12">
-                                    <p class="small mb-0">Already have an account? <a href="">Log in</a></p>
+                                    <p class="small mb-0">Already have an account? <a href="{{route('login.form')}}">Log in</a></p>
                                 </div>
                             </form>
 
@@ -86,7 +85,6 @@
         </div>
 
     </section>
-@endsection
 
 @section('scripts')
 

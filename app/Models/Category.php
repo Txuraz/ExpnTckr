@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'parent_id'];
+
+    public function budgets()
+    {
+        return $this->hasMany(Budget::class);
+    }
+
+    public function expenses() {
+        return $this->hasMany(Expense::class);
+    }
+
 }

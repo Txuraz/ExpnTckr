@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title', 'Login')
-@section('content')
     <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
             <div class="row justify-content-center">
@@ -21,7 +20,7 @@
                                 <p class="text-center small">Enter your username & password to login</p>
                             </div>
 
-                            <form class="row g-3" action="" method="post">
+                            <form class="row g-3" action="{{route('auth.user')}}" method="post">
                                 @csrf
                                 <div class="col-12">
                                     <label for="yourEmail" class="form-label">Email</label>
@@ -46,7 +45,7 @@
                                 </div>
                                 <div class="col-12">
                                     <p class="small mb-0">Don't have an account? <a
-                                            href="">Create an account</a></p>
+                                            href="{{route('register.form')}}">Create an account</a></p>
                                 </div>
                             </form>
 
@@ -58,7 +57,6 @@
         </div>
 
     </section>
-@endsection
 
 @section('scripts')
 
